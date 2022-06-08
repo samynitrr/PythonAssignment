@@ -15,7 +15,7 @@ class Validate():
         //File Does Not Exist
         file = 'C:/Users/User/Desktop/filertr.txt'
         file_exists(file)
-        result --> False 
+        result --> raise Exception Error  
         '''
         if os.path.exists(file):
                 return True
@@ -31,13 +31,13 @@ class Validate():
         example:    
         //File is txt
         file = 'C:/Users/User/Desktop/file.csv'
-        file_is_csv(file)
+        file_is_txt(file)
         result --> True
 
         //File is not txt
         file = 'C:/Users/User/Desktop/file.txt'
-        file_is_csv(file)
-        result --> False 
+        file_is_txt(file)
+        result --> raise Exception Error 
         '''
         if file.endswith('.txt'):
                 return True
@@ -54,7 +54,7 @@ class Validate():
         //File is Empty
         file = 'C:/Users/User/Desktop/file.txt'
         file_not_empty(file)
-        result --> False
+        result --> raise Exception Error 
 
         //File is Not Empty
         file = 'C:/Users/User/Desktop/file.txt'
@@ -85,7 +85,7 @@ class Validate():
         //File does not have old string
         file = 'C:/Users/User/Desktop/file.txt'
         file_has_old_string(file, 'new')
-        result --> False 
+        result --> raise Exception Error  
         '''
         if old_string in open(file).read():
                 return True
