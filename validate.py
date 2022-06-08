@@ -17,11 +17,10 @@ class Validate():
         file_exists(file)
         result --> False 
         '''
-        try:
-            if os.path.exists(file):
+        if os.path.exists(file):
                 return True
-        except Exception as e:
-            return ('File does not exist.')
+        else:
+            raise Exception ('File does not exist! Provide a correct file path')
     
     def file_is_txt(self,file:str):
         '''
@@ -40,11 +39,10 @@ class Validate():
         file_is_csv(file)
         result --> False 
         '''
-        try:
-            if file.endswith('.txt'):
+        if file.endswith('.txt'):
                 return True
-        except Exception as e:
-            return ('File is not a txt file.')
+        else:
+            raise Exception('File is not txt file. Please check the extension of the file')
 
     def file_not_empty(self,file:str):
         '''
@@ -63,11 +61,10 @@ class Validate():
         file_not_empty(file)
         result --> True 
         '''
-        try:
-            if os.path.getsize(file) > 0:
+        if os.path.getsize(file) > 0:
                 return True
-        except Exception as e:
-            return ('File is empty.')         
+        else:
+            raise Exception('File is empty.')         
 
                
 
@@ -90,8 +87,7 @@ class Validate():
         file_has_old_string(file, 'new')
         result --> False 
         '''
-        try:
-            if old_string in open(file).read():
+        if old_string in open(file).read():
                 return True
-        except Exception as e:
-            return ('File does not contain the {old_string}.')
+        else:
+            raise Exception ('File does not contain the {0}.'.format(old_string))

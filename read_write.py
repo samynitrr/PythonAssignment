@@ -1,7 +1,7 @@
 from validate import Validate
 
-validate= Validate()
-class Read_Write():
+
+class Read_Write(Validate):
     def read_file(self,file:str):
             '''
             Reads a file and returns the content.
@@ -19,13 +19,12 @@ class Read_Write():
             
             
             '''
-            try:
-                if validate.file_exists(file) & validate.file_is_txt(file) & validate.file_not_empty(file):
-                    with open(file, 'r') as f:
-                        filecontent  = f.read()
-                    return filecontent
-            except Exception as e:
-                return (e)
+            if self.file_exists(file):
+                if self.file_is_txt(file):
+                    if self.file_not_empty(file):
+                        with open(file, 'r') as f:
+                            filecontent  = f.read()
+                        return filecontent
 
     def write_file(self, file:str, content:str):
         '''

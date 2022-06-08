@@ -1,12 +1,8 @@
 import pandas as pd
 from validate import Validate
 from read_write import Read_Write
-from log import *
 
-validate = Validate()
-read_write = Read_Write()
-
-class Update():
+class Update(Read_Write):
     
     def read_and_replace_pandas(self, file:str, old_string:str, new_string:str):
         '''
@@ -29,16 +25,19 @@ class Update():
         
         
         '''  
-        try:
-            if validate.file_exists(file) & validate.file_is_txt(file) & validate.file_not_empty(file):
-                df = pd.read_csv(file, header = None)
-                df.columns=['text']
-                if validate.file_has_old_string(file, old_string):
-                    df['text'] = df['text'].str.replace(old_string,new_string)
-                    df.to_csv(file, index=False, header=None)
-                    return 'The text file was successfully read and replaced.'
-        except Exception as e:
-            return (e)
+        if self.file_exists(file):
+            if self.file_is_txt(file):
+                if self.file_not_empty(file):
+                    df = pd.read_csv(file, header = None)
+                    df.columns=['text']
+                    if self.file_has_old_string(file, old_string):
+                        df['text'] = df['text'].str.replace(old_string,new_string)
+                        df.to_csv(file, index=False, header=None)
+                        return 'The text file was successfully read and replaced.'
+                    else:
+                        raise Exception ('The text file was successfully read but not replaced.')
+        
+        
 
     def read_and_replace(self,file:str, old_string:str, new_string:str):
         '''
@@ -61,11 +60,10 @@ class Update():
         
         
         '''
-        try:            
-            filecontent = read_write.read_file(file)
-            if validate.file_has_old_string(file, old_string):
-                filecontent = filecontent.replace(old_string, new_string)
-                read_write.write_file(file, filecontent)
-                return 'The text file was successfully read and replaced.'            
-        except Exception as e:
-            return (e)
+        filecontent = self.read_file(file)
+        if self.file_has_old_string(file, old_string):
+            filecontent = filecontent.replace(old_string, new_string)
+            self.write_file(file, filecontent)
+            return 'The text file was successfully read and replaced.'            
+        else:
+            raise Exception ('The text file was successfully read but not replaced.')
