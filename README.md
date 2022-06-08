@@ -1,12 +1,23 @@
 # PythonAssignment
 
 This is a python assignment.
+
+https://drive.google.com/file/d/1vkmqcjYHQr_hKe8qRBmLc-T8tO2Cb7ev/view
+
 1. Create a function in python to read the text file and replace specific content of the file.
 
-File Name              example.txt
-Origin file content    This is a placement assignment
-Replace string         'Placement' should be replaced with 'screening'
-Replaced file content  This is a screening assignment
+```
+example:    
+        filecontent = 'This is a test file'
+
+        file = 'C:/Users/User/Desktop/file.txt'
+        read_and_replace(file, 'test', 'what')
+        result --> 'The text file was successfully read and replaced.'
+
+        filecontent = 'This is a what file'
+
+```
+
 
 This code is written with OOPS concept. It is created with multiple classes. 
 - validate.py : It has a validate Class which checks for file exists, file format and file content not empty and old_string exists in file.
@@ -15,8 +26,6 @@ This code is written with OOPS concept. It is created with multiple classes.
 
 []: # Language: python
 []: # Path: app.py
-
-It has 
 
 2. Demonstrate use of abstract class, multiple inheritance and decorator in python using examples.
 
