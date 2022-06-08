@@ -10,7 +10,7 @@ read_write = Read_Write()
 # Both functions can also be run at the same time 
 # but pay attention to the old_string and new_string values.
 
-file = '/Users/sameershekhar/Documents/GitHub/Data Science Masters/FSDS/1. Python/demo.txt'
+file = 'text_files/test.txt'
 
 # 1. Read and Replace using Pandas
 old_string = 'test'

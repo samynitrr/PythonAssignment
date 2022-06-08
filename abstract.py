@@ -34,6 +34,6 @@ class file:
 class fileoperations(file):
     pass
 
-fl = fileoperations('/Users/sameershekhar/Documents/GitHub/Data Science Masters/FSDS/1. Python/Object Oriented Programming/file.txt')
+fl = fileoperations('text_files/file.txt')
 content = fl.read()
 print(content)
