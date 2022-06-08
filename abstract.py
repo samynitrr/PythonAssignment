@@ -1,5 +1,6 @@
 # This is an example for the abstract class. Abstract Classes are blueprints for classes. They are used to define the structure of a class.
-# Look at below example. In this example, we are defining the structure of a class. Using this structure I have create a single inheritance class to be used in a project.
+# Look at below example. In this example, we are defining the structure of a class. 
+# Using this structure I have create a single inheritance class to be used in a project.
 '''
 class file:
     pass
