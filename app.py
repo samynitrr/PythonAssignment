@@ -11,7 +11,10 @@ new_string = 'test'
 read = read_write.read_file(file)
 print('File content before update\n',read)
 
+# Read and Replace using Pandas
 # read_replace = update.read_and_replace_pandas(file, old_string, new_string)
-read_replace = update.read_and_replace(file, old_string, new_string)
+
+#Read and Replace using python default functions
+# read_replace = update.read_and_replace(file, old_string, new_string)
 read = read_write.read_file(file)
 print('File content after update\n',read)
