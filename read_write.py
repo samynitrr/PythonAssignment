@@ -15,7 +15,7 @@ class Read_Write(Validate):
             read_file(file)
             result --> 'This is a test file'
 
-            filecontent = 'This is a what file'
+            
             
             
             '''
@@ -41,7 +41,7 @@ class Read_Write(Validate):
         write_file(file, filecontent)
         result --> 'The text file was successfully written.'
 
-        filecontent = 'This is a what file'
+        
         
         
         '''
